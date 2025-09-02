@@ -9,5 +9,5 @@ print(f"Total expenses: ${get_total_expenses():.2f}")
 print(f"Food expenses: ${get_total_expenses_by_category('Food')}")
 print(f"Entertainment expenses: ${get_total_expenses_by_category('Entertainment')}")
 
-clear_expenses()
+# clear_expenses()
 get_expenses()
