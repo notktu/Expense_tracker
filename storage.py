@@ -14,7 +14,7 @@ def get_expenses(): # returns a list of dicts of expenses and categories
     with open(FILE, "r") as f:
         data = json.load(f)
         if not data:  # True if the list is empty
-            print("No expenses found.")
+            # print("No expenses found.")
             return []  # return empty list so code doesn’t break
         return data
     

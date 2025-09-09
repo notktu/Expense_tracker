@@ -1,6 +1,10 @@
 [
   {
     "amount": 100.0,
-    "category": "t"
+    "category": "food"
+  },
+  {
+    "amount": 100.0,
+    "category": "Food"
   }
 ]
