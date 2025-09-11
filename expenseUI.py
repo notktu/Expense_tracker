@@ -2,9 +2,9 @@ from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import tkinter as tk
 from tkinter import ttk
-from storage import add_expense, get_expenses, clear_expenses, get_total_expenses, get_total_expenses_by_category
+from expenseFunctions import add_expense, get_expenses, clear_expenses, get_total_expenses, get_total_expenses_by_category
 
-def launch_expense_tracker():
+def expenseTracker():
 
     root = tk.Tk()
     root.title("Expense Tracker")    
@@ -24,7 +24,7 @@ def launch_expense_tracker():
             for e in expenses:
                 tree.insert("", "end", values=(f"${e['amount']:.2f}", e["category"]))
 
-    def add_expense_ui(event=None):
+    def add_expense_ui():
         try:
             amount = float(amount_entry.get())
         except ValueError:
@@ -129,7 +129,7 @@ def launch_expense_tracker():
         if expenses:
             category_totals = {}
             for e in expenses:
-                category_totals[e["category"]] = category_totals.get(e["category"].lower().strip(), 0) + e["amount"]
+                category_totals[e["category"]] = category_totals.get(e["category"], 0) + e["amount"]
 
             labels = list(category_totals.keys())
             values = list(category_totals.values())
